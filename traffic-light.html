@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS Box traffic Lights</title>
+    <style>
+        .traffic-lights{
+            width: 100px;
+            height: 350px;
+        }
+        #light{
+            width: 100px;
+            height: 286px;
+            background-color: #333;
+            border-radius: 4px;
+            padding: 0.1px;
+            box-shadow: 0 0 15px #222;
+        }
+        #light>div{
+            width: 68px;
+            height: 68px;
+            border-radius: 47.5%;
+            border-top: 6px solid #000;
+            margin: 16px;
+        }        
+        #light .red{
+            background-color: #ff0000;
+            box-shadow: 0 0px 40px #922B21  inset;
+            animation: anim-1 125s infinite;
+           
+        }
+        @keyframes anim-1{
+            0%, 47%{box-shadow: 0 5px 10px #ff0000;}
+            48%, 100%{box-shadow: 0 0px 40px #922B21  inset;}
+        }
+        #light .yellow{
+            background-color: #ffff00;
+            box-shadow: 0 0px 40px #D4AC0D  inset;
+            animation: anim-2 125s infinite; 
+        }
+        @keyframes anim-2{
+            0%, 47%, 52%, 100%{box-shadow: 0 0px 40px #D4AC0D  inset;}
+            48%, 51%{box-shadow: 0 5px 10px #ffff00;}
+        }
+        #light .green{
+            background-color: #008000;
+            box-shadow: 0 0px 40px #145A32  inset;
+            animation: anim-3 125s infinite;  
+        }
+        @keyframes anim-3{
+            0%, 51%{box-shadow: 0 0px 40px #145A32  inset}
+            52%, 100%{box-shadow: 0 5px 10px #008000;}
+        }
+        .red-man__head,
+        .green-man__head{
+            width: 9.5px;
+            height: 9.5px;
+            border-radius: 50%;
+        }
+        .red-man{
+            position: relative;
+            width: 22px;
+            height: 64px;
+        }
+        .red-man_position{ 
+            top: -261px;
+            left: calc(50% - 11px);
+        }
+
+        .red-man>div{
+            background-color: #922B21;
+            opacity: 0.8;
+            position: absolute;
+        }
+        .red-man>div:not([class="red-man__head"]){
+            border-radius: 2px;
+        }
+        .red-man__head{
+            left: calc(50% - 4.75px);   
+        }
+        .red-man__torso{
+            width: 10px;
+            height: 22px;
+            top: 10.7px;
+            left: calc(50% - 5px);
+        }
+        .red-man__left-arm,
+        .red-man__right-arm{
+            width: 4px;
+            height: 22px;
+            top: 10.7px;
+        }
+        .red-man__left-arm{
+            left: 1px;
+        }
+        .red-man__right-arm{
+            right: 1px;
+        }
+        .red-man__left-leg,
+        .red-man__right-leg{
+            width: 4px;
+            height: 27px;
+            top: 33.5px;
+        }
+        .red-man__left-leg{
+            left: 6px;
+        }
+        .red-man__right-leg{
+            right: 6px;
+        }
+       .green-man{
+            position: relative;
+            width: 33px;
+            height: 62px; 
+        }
+        .green-man_position{ 
+            top: -145px;
+            left: calc(50% - 16.5px);
+        }
+        .green-man>div{
+            background-color: #145A32;
+            opacity: 0.8;
+            position: absolute;
+        }
+        .green-man>div:not([class="green-man__head"]){
+            border-radius: 2px;
+        }
+         .green-man__head{
+            left: 37%;   
+        }
+        .green-man__torso{
+            width: 9px;
+            height: 22px;
+            top: 10.7px;
+            left: calc(50% - 4.5px);
+        }
+        .green-man__left-arm-1{
+            width: 4px;
+            height: 11px;
+            top: 10px;
+            left: 8px;
+            transform: rotate(45deg);
+        }
+        .green-man__left-arm-2{
+            width: 4px;
+            height: 16px;
+            top: 16.5px;
+            left: 5px;
+        }
+        .green-man__right-arm{
+            width: 4px;
+            height: 15px;
+            top: 17px;
+            right: 7px;
+            transform: rotate(-45deg);
+        }
+        .green-man__left-leg,
+        .green-man__right-leg{
+            width: 4px;
+            height: 27px;
+            top: 32px; 
+        }
+        .green-man__left-leg{
+            left: 6px;
+            transform: rotate(25deg);
+        }
+        .green-man__right-leg{
+            right: 6px;
+            transform: rotate(-25deg);
+        }
+    </style>
+</head>
+<body>
+    <div class="traffic-lights">
+    <div id="light">
+        <div class="red"></div>
+        <div class="yellow"></div>
+        <div class="green"></div>
+    </div>
+        <div class="red-man red-man_position">
+        <div class="red-man__head"></div>
+        <div class="red-man__torso"></div>
+        <div class="red-man__left-arm"></div>
+        <div class="red-man__right-arm"></div>
+        <div class="red-man__left-leg"></div>
+        <div class="red-man__right-leg"></div>
+    </div>
+    <div class="green-man green-man_position">
+        <div class="green-man__head"></div>
+        <div class="green-man__torso"></div>
+        <div class="green-man__left-arm-1"></div>
+        <div class="green-man__left-arm-2"></div>
+        <div class="green-man__right-arm"></div>
+        <div class="green-man__left-leg"></div>
+        <div class="green-man__right-leg"></div>
+     </div>
+     </div>
+</body>
+</html>
